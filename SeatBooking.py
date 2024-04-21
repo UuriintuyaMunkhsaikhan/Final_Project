@@ -1,5 +1,13 @@
 # Seat-Booking Application
-
+# Seat availability data structure
+seats = {
+    '1A': 'F', '2A': 'F', '3A': 'F', '4A': 'F', '78A': 'F', '77A': 'F', '79A': 'F', '80A': 'F',
+    '1B': 'F', '2B': 'F', '3B': 'F', '4B': 'F', '78B': 'F', '77B': 'F', '79B': 'F', '80B': 'F',
+    '1C': 'F', '2C': 'F', '3C': 'F', '4C': 'F', '78C': 'F', '79C': 'F', '80C': 'F',
+    '1D': 'F', '2D': 'F', '3D': 'F', '4D': 'F', '79D': 'F', '80D': 'F',
+    '1E': 'F', '2E': 'F', '3E': 'F', '4E': 'F', '79E': 'F', '80E': 'F',
+    '1F': 'F', '2F': 'F', '3F': 'F', '4F': 'F', '79F': 'F', '80F': 'F'
+}
 # Function to check the availability of a seat
 def check_seat_availability():
     # Implement the logic to check the availability of a seat
