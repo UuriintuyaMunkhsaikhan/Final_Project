@@ -1,4 +1,15 @@
+import random
+import string
+# Define the booking_references set
+booking_references = set()
+
 # Seat-Booking Application
+def generate_booking_reference():
+    while True:
+        reference = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
+        # Check if the generated reference is unique
+        if reference not in booking_references():
+            return reference
 # Seat availability data structure
 seats = {
     '1A': 'F', '2A': 'F', '3A': 'F', '4A': 'F', '78A': 'F', '77A': 'F', '79A': 'F', '80A': 'F',
@@ -73,3 +84,9 @@ while True:
         break
     else:
         print("Invalid choice. Please try again.")
+
+
+# Example usage
+new_reference = generate_booking_reference()
+booking_references.add(new_reference)
+print(new_reference)
