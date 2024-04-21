@@ -5,10 +5,10 @@ booking_references = set()
 
 # Function to generate a random booking reference
 def generate_booking_reference():
-    while True:
+    reference = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
+    while reference in booking_references:
         reference = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
-        if reference not in booking_references:
-            return reference
+        return reference
 
 # Customer data structure to store information based on booking reference
 customer_data = {}
@@ -23,7 +23,7 @@ seats = {
     '1F': 'F', '2F': 'F', '3F': 'F', '4F': 'F', '79F': 'F', '80F': 'F'
 }
 # Function to check the availability of a seat
-def check_seat_availability():
+def check_seat_availability(seat):
     seat = input("Enter seat number: ")
     if seat in seats:
         if seats[seat] == 'F':
@@ -35,7 +35,7 @@ def check_seat_availability():
 
 
 # Function to book a seat
-def book_seat():
+def book_seat(seat, passenger_name, passport_number):
     seat = input("Enter seat number: ")
     if seat in seats:
         if seats[seat] == 'F':
@@ -52,14 +52,14 @@ def book_seat():
                 'seat_column': seat_column
             }  # Store customer information based on booking reference
             booking_references.add(reference)
-            print("Seat booked for", passenger_name, "with reference", reference)
+            print("Seat booked for {} with reference {}".format(passenger_name, reference))
         else:
             print("Seat is already booked.")
     else:
         print("Invalid seat number.")
 
 # Function to free a seat
-def free_seat():
+def free_seat(seat):
     seat = input("Enter seat number: ")
     if seat in seats:
         if seats[seat] != 'F':
