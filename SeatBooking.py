@@ -18,12 +18,20 @@ def check_seat_availability():
             print("Seat is already booked.")
     else:
         print("Invalid seat number.")
-    pass
+
 
 # Function to book a seat
 def book_seat():
-    # Implement the logic to book a seat
-    pass
+    seat = input("Enter seat number: ")
+    if seat in seats:
+        if seats[seat] == 'F':
+            passenger_name = input("Enter passenger name: ")
+            seats[seat] = 'B'
+            print("Seat booked for", passenger_name)
+        else:
+            print("Seat is already booked.")
+    else:
+        print("Invalid seat number.")
 
 # Function to free a seat
 def free_seat():
