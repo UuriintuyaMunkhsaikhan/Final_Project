@@ -10,7 +10,14 @@ seats = {
 }
 # Function to check the availability of a seat
 def check_seat_availability():
-    # Implement the logic to check the availability of a seat
+    seat = input("Enter seat number: ")
+    if seat in seats:
+        if seats[seat] == 'F':
+            print("Seat is available.")
+        else:
+            print("Seat is already booked.")
+    else:
+        print("Invalid seat number.")
     pass
 
 # Function to book a seat
