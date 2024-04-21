@@ -10,7 +10,7 @@ def generate_booking_reference():
         if reference not in booking_references:
             return reference
 
-# Customer data structure
+# Customer data structure to store information based on booking reference
 customer_data = {}
 
 # Seat availability data structure
@@ -43,14 +43,14 @@ def book_seat():
             passport_number = input("Enter passport number: ")
             seat_row = seat[:-1]
             seat_column = seat[-1]
-            reference = generate_booking_reference()
-            seats[seat] = reference
+            reference = generate_booking_reference()  # Generate a unique booking reference
+            seats[seat] = reference  # Update seat status to the booking reference
             customer_data[reference] = {
                 'passenger_name': passenger_name,
                 'passport_number': passport_number,
                 'seat_row': seat_row,
                 'seat_column': seat_column
-            }
+            }  # Store customer information based on booking reference
             booking_references.add(reference)
             print("Seat booked for", passenger_name, "with reference", reference)
         else:
@@ -63,10 +63,10 @@ def free_seat():
     seat = input("Enter seat number: ")
     if seat in seats:
         if seats[seat] != 'F':
-            reference = seats[seat]
-            del customer_data[reference]
-            seats[seat] = 'F'
-            booking_references.remove(reference)
+            reference = seats[seat]   # Get the booking reference associated with the seat
+            del customer_data[reference]  # Remove customer information based on booking reference
+            seats[seat] = 'F'   # Update seat status to free
+            booking_references.remove(reference)   # Remove booking reference from set of references
             print("Seat freed.")
         else:
             print("Seat is already free.")
