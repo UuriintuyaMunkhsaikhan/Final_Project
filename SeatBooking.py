@@ -35,8 +35,15 @@ def book_seat():
 
 # Function to free a seat
 def free_seat():
-    # Implement the logic to free a seat
-    pass
+    seat = input("Enter seat number: ")
+    if seat in seats:
+        if seats[seat] == 'B':
+            seats[seat] = 'F'
+            print("Seat freed.")
+        else:
+            print("Seat is already free.")
+    else:
+        print("Invalid seat number.")
 
 # Function to show the booking state
 def show_booking_state():
