@@ -47,8 +47,8 @@ def free_seat():
 
 # Function to show the booking state
 def show_booking_state():
-    # Implement the logic to display the booking state
-    pass
+    for seat, status in seats.items():
+        print("Seat:", seat, "Status:", "Booked" if status == 'B' else "Free")
 
 # Main program
 while True:
