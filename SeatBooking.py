@@ -23,7 +23,7 @@ seats = {
     '1F': 'F', '2F': 'F', '3F': 'F', '4F': 'F', '79F': 'F', '80F': 'F'
 }
 # Function to check the availability of a seat
-def check_seat_availability(seat):
+def check_seat_availability():
     seat = input("Enter seat number: ")
     if seat in seats:
         if seats[seat] == 'F':
@@ -35,7 +35,7 @@ def check_seat_availability(seat):
 
 
 # Function to book a seat
-def book_seat(seat, passenger_name, passport_number):
+def book_seat():
     seat = input("Enter seat number: ")
     if seat in seats:
         if seats[seat] == 'F':
@@ -59,7 +59,7 @@ def book_seat(seat, passenger_name, passport_number):
         print("Invalid seat number.")
 
 # Function to free a seat
-def free_seat(seat):
+def free_seat():
     seat = input("Enter seat number: ")
     if seat in seats:
         if seats[seat] != 'F':
@@ -115,6 +115,6 @@ while True:
 
 # Example usage
 check_seat_availability()
-book_seat()
+book_seat("2A", "uuriintuya", "23")
 free_seat()
 show_booking_state()
