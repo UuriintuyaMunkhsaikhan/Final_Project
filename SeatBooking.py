@@ -115,6 +115,6 @@ while True:
 
 # Example usage
 check_seat_availability()
-book_seat("2A", "uuriintuya", "23")
+book_seat()
 free_seat()
 show_booking_state()
